@@ -1,12 +1,3 @@
-#When I visit "/" then I see a 
-#link to 'Create a New Bathroom" 
-#when I click on that link I am taken to 
-#a form with the following fields:
-  #location 
-  #directions 
-  #baby changing station y/n
-  #bathroom style (gender-neutral, multi-stall womens, mulsti-stall mens, single F, single M, porta-potty)
-  #key code needed y/n
 #and then I submit the form and I am redirected to 
 #a bathroom show page where I now see my newly created bathroom 
 
@@ -25,5 +16,9 @@ RSpec.describe "New Throne room (registration)" do
     expect(page).to have_content("Baby changing station?")
     expect(page).to have_content("Throne style")
     expect(page).to have_content("Key code?")
+    expect(page).to have_button("Register New Throne")
   end
+
+  it "redirects to a bathroom show page where the user can see their newly created bathroom" 
+  #is this right? Where do we want this to redirect to?
 end
