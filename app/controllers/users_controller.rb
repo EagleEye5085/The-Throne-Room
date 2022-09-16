@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
     def create
-        user = User.find_or_create_by(email: request.env['omniauth.auth'][:info][:email])
-        session[:user_token] = request.env['omniauth.auth'][:credentials][:token]
+        auth = request.env['omniauth.auth']
+        user = User.find_or_create_by(email: auth[:info][:email])
+        session[:user_token] = auth[:credentials][:token]
         redirect_to '/'
     end
 end
