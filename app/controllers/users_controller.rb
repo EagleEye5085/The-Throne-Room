@@ -5,5 +5,10 @@ class UsersController < ApplicationController
         session[:user_token] = auth[:credentials][:token]
         redirect_to '/'
     end
+
+    def destroy
+        session.destroy
+        redirect_to '/'
+      end
 end
     
