@@ -40,7 +40,8 @@
 </html>
 
 
-
+<% if !current_user %>
   <%= button_to 'Login', 'auth/google_oauth2', method: :get %>
-
-  <%= button_to 'Logout - not working do not click', '/logout', method: :delete %>
+<% else %>
+  <%= button_to 'Logout', '/logout', method: :delete %>
+<% end %>
