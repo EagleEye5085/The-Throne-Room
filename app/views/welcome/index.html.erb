@@ -38,3 +38,10 @@
     async defer></script>
   </body>
 </html>
+
+
+<% if !current_user %>
+  <%= button_to 'Login', 'auth/google_oauth2', method: :get %>
+<% else %>
+  <%= button_to 'Logout', '/logout', method: :delete %>
+<% end %>
