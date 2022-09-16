@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController 
-  def Index
-    
+  #before_action :authorize
+  def Index 
   end
 end
