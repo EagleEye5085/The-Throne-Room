@@ -1,5 +1,5 @@
 <h1>Register a new Throne</h1>
-<%= form_with url: "/thrones", method: :post, local: true do |form| %>
+<%= form_with url: "https://the-throne-room-api.herokuapp.com/api/v1/throne_rooms", method: :post, local: true do |form| %>
   <p><%= form.label "Location" %>
   <%= form.text_field "Location" %></p>
   <p><%= form.label "Directions" %>
