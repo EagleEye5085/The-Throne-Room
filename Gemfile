@@ -7,8 +7,6 @@ gem 'faraday'
 
 gem 'factory_bot_rails'
 
-gem 'faker'
-
 gem 'figaro'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -71,6 +69,7 @@ group :test do
   gem 'orderly'
   gem 'pry'
   gem 'webmock'
+  gem 'faker'
   # Easy installation and use of chromedriver to run system tests with Chrome
 end
 
