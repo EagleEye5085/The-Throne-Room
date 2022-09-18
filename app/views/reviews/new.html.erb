@@ -1,24 +1,27 @@
+<div class="navbar">
+<div class="center-horiz">
 <h1>Bathroom Review Form</h1>
+  <p>Choose a number from 0 to 5 for the below fields</p>
+  <%= form_with url: "https://the-throne-room-api.herokuapp.com/api/v1/reviews", method: :post, local: true do |f| %>
+    <%= f.label :cleanliness, "Cleanliness" %>
+    <%= f.number_field :cleanliness, min: 0, max: 5  %><br>
+  <br>
+    <%= f.label :tp, "Quality of Toilet Paper" %>
+    <%= f.number_field :tp, min: 0, max: 5 %><br>
+  <br>
+    <%= f.label :privacy, "Privacy" %>
+    <%= f.number_field :privacy, min: 0, max: 5  %><br>
+  <br>
+    <%= f.label :soap, "Quality of Soap" %>
+    <%= f.number_field :soap, min: 0, max: 5  %><br>
+  <br>
+    <%= f.label :accesibility, "Accesibility" %>
+    <%= f.number_field :accesibility, min: 0, max: 5 %><br>
+  <br>
+  Comments<br>
+    <%= f.text_area :comments, :cols => 30, :rows => 10 %><br>
 
-<p>Choose a number from 0 to 5 for the below fields</p>
-<%= form_with url: "https://the-throne-room-api.herokuapp.com/api/v1/reviews", method: :post, local: true do |f| %>
-  <%= f.label :cleanliness, "Cleanliness" %>
-  <%= f.number_field :cleanliness, min: 0, max: 5  %><br>
-<br>
-  <%= f.label :tp, "Quality of Toilet Paper" %>
-  <%= f.number_field :tp, min: 0, max: 5 %><br>
-<br>
-  <%= f.label :privacy, "Privacy" %>
-  <%= f.number_field :privacy, min: 0, max: 5  %><br>
-<br>
-  <%= f.label :soap, "Quality of Soap" %>
-  <%= f.number_field :soap, min: 0, max: 5  %><br>
-<br>
-  <%= f.label :accesibility, "Accesibility" %>
-  <%= f.number_field :accesibility, min: 0, max: 5 %><br>
-<br>
-Comments<br>
-  <%= f.text_area :comments, :cols => 30, :rows => 10 %><br>
-
-  <%= f.submit 'Submit Review' %>
-<% end %>
+    <%= f.submit 'Submit Review' %>
+  <% end %>
+  </div>
+  </div>

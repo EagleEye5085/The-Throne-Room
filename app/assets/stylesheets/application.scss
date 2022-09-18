@@ -13,3 +13,32 @@
  */
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+
+.center-horiz {
+  /* display: block; */
+  margin: auto;
+  /* margin-right: auto; */
+  width: 50%;
+  text-align: center;
+  font-family: Garamond, serif;
+}
+
+.navbar {
+  margin-bottom: 0;
+  background: seashell;
+}
+
+body {
+  background: white;
+  font-family: Garamond, sans-serif;
+}
+
+h1,
+h2 {
+  font-weight: bold;
+}
+
+p {
+  font-size: 16px;
+  color: black
+}
