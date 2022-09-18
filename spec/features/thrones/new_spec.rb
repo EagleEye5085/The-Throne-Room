@@ -19,6 +19,6 @@ RSpec.describe "New Throne room (registration)" do
     expect(page).to have_button("Register New Throne")
   end
 
-  it "redirects to a bathroom show page where the user can see their newly created bathroom" 
+  # it "redirects to a bathroom show page where the user can see their newly created bathroom" 
   #is this right? Where do we want this to redirect to?
 end
