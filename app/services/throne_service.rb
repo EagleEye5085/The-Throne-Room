@@ -1,11 +1,12 @@
 class ThroneService
     
+    def self.conn
+        Faraday.new(url: "https://the-throne-room-api.herokuapp.com")
+    end
+
     def self.get_thrones
-        response = conn.get("/throne_rooms")
-        JSON.parse(response.body, symbolize_names: true)
+        response = conn.get("/api/v1/throne_rooms")
+        JSON.parse(response.body, symbolize_names: true)[:data]
     end
     
-    def self.conn
-        Faraday.new(url: "https://the-throne-room-api.herokuapp.com/api/v1")
-    end
 end
