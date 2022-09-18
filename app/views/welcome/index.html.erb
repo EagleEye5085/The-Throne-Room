@@ -1,8 +1,16 @@
-<div class="container">
-  <h1>Welcome</h1>
+<div class="center-horiz">
+  <h1>The Throne Room</h1>
+  <h6>It's the next big movement</h6>
 </div>
-<%= link_to "Create New Throne Room", "/thrones/new"%>
-<%= link_to "Create New Review", "/reviews/new"%>
+<div class="navbar">
+  <p><%= link_to "Create New Throne Room", "/thrones/new"%></p>
+  <p><%= link_to "Create New Review", "/reviews/new"%></p>
+  <% if !current_user %>
+    <%= button_to 'Login', 'auth/google_oauth2', method: :get %>
+  <% else %>
+    <%= button_to 'Logout', '/logout', method: :delete %>
+  <% end %>
+</div>
  <!DOCTYPE html>
 <html>
   <head>
@@ -42,8 +50,4 @@
 </html>
 
 
-<% if !current_user %>
-  <%= button_to 'Login', 'auth/google_oauth2', method: :get %>
-<% else %>
-  <%= button_to 'Logout', '/logout', method: :delete %>
-<% end %>
+
