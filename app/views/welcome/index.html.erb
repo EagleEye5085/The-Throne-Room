@@ -6,7 +6,6 @@
 <div class="navbar">
   <% if current_user %>
     <p><%= link_to "Create New Throne Room", "/thrones/new"%></p>
-    <p><%= link_to "Create New Review", "/reviews/new"%></p>
     <% end %>
   <% if !current_user %>
     <%= button_to 'Login', 'auth/google_oauth2', method: :get %>

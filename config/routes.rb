@@ -3,8 +3,8 @@ Rails.application.routes.draw do
 
   #maybe redirect later to different controller action
   get '/auth/google_oauth2/callback', to: 'users#create'
-  get '/reviews/new', to: 'reviews#new'
-  post '/reviews/new', to: 'reviews#create'
+  
+  get '/thrones/:id/reviews/new', to: 'reviews#new'
   
   resources :thrones, only: [:new, :show]
   delete 'logout', to: 'users#destroy'
