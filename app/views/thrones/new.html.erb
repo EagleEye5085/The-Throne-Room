@@ -2,80 +2,29 @@
 <div class="center-horiz">
 <h1>Register a new Throne</h1>
 <%= form_with url: "https://the-throne-room-api.herokuapp.com/api/v1/throne_rooms", method: :post, local: true do |form| %>
-<div class="cards">
-  <p><%= form.label "Location" %>
-  <%= form.text_field "Location" %></p>
-  <p><%= form.label "Directions" %>
-  <%= form.text_field "Directions" %></p>
-  </div><br>
-  <p><strong><%= form.label "Baby changing station?" %></strong>
+  <p><%= form.label :location, "Location" %>
+  <%= form.text_field :location %></p>
+  <p><%= form.label :directions, "Directions" %>
+  <%= form.text_field :direction %></p>
+  <br>
+    <p><strong><%= form.label :baby_changing_station, "Baby changing station?" %></strong>  
   <div class="cards">
-  <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-    <label class="form-check-label" for="flexRadioDefault1">
-      Yes
-    </label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
-    <label class="form-check-label" for="flexRadioDefault2">
-      No
-    </label>
-  </div>
+    <p><%= form.radio_button :true, "Yes" %> Yes</p>
+    <p><%= form.radio_button :false, "No" %> No</p>
   </div><br>
   <p><strong><%= form.label "Throne Style" %></strong>
   <div class="cards">
-  <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-    <label class="form-check-label" for="flexRadioDefault1">
-      gender-neutral
-    </label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
-    <label class="form-check-label" for="flexRadioDefault2">
-      multi-stall (F)
-    </label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" >
-    <label class="form-check-label" for="flexRadioDefault3">
-      multi-stall (M)
-    </label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" >
-    <label class="form-check-label" for="flexRadioDefault4">
-      single-stall (F)
-    </label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5" >
-    <label class="form-check-label" for="flexRadioDefault5">
-      single-stall (M)
-    </label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault6" >
-    <label class="form-check-label" for="flexRadioDefault6">
-      porta-potty
-    </label>
-    </div>
+    <p><%= form.radio_button :gender_neutral, 'Gender Neutral'%> Gender Neutral</p>
+    <p><%= form.radio_button :multi_stall_female, 'multi-stall(F)'%> Multi-Stall (F)</p>
+    <p><%= form.radio_button :multi_stall_male, 'multi-stall(M)'%> Multi-Stall (M)</p>
+    <p><%= form.radio_button :single_stall_female, 'single-stall(F)'%> Single-Stall (F)</p>
+    <p><%= form.radio_button :single_stall_male, 'single-stall(M)'%> Single-Stall (M)</p>
+    <p><%= form.radio_button :porta_potty, 'porta-potty'%> Porta-Potty</p>
   </div><br>
   <p><strong><%= form.label "Key Code?" %></strong>
   <div class="cards">
-  <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-    <label class="form-check-label" for="flexRadioDefault1">
-      Yes
-    </label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
-    <label class="form-check-label" for="flexRadioDefault2">
-      No
-    </label>
-    </div>
+    <p><%= form.radio_button :true, 'Yes'%> Yes</p>
+    <p><%= form.radio_button :false, 'No'%> No</p>
   </div><br>
   <p><%= form.submit "Register New Throne" %>
 <% end %>
