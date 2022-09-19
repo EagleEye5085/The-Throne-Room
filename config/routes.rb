@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/auth/google_oauth2/callback', to: 'users#create'
   get '/reviews/new', to: 'reviews#new'
   post '/reviews/new', to: 'reviews#create'
-  # get '/thrones/new', to: 'thrones#new'
+  
   resources :thrones, only: [:new, :show]
   delete 'logout', to: 'users#destroy'
 
