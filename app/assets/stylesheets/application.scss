@@ -42,3 +42,22 @@ p {
   font-size: 16px;
   color: black
 }
+
+.pad-25-top {
+  padding-top: 25px;
+}
+
+.pad-25-bottom {
+  padding-bottom: 25px;
+}
+
+.img {
+  opacity: 0.5;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
