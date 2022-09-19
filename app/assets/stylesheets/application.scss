@@ -75,3 +75,16 @@ p {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
+
+.box {
+  display: grid;
+  width: 540px;
+  grid-template-columns: 120px 120px 120px;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.wrapper {
+  padding-right: 20px;
+}
+
