@@ -6,7 +6,6 @@
 <div class="navbar">
   <% if current_user %>
     <p><%= link_to "Create New Throne Room", "/thrones/new"%></p>
-    <p><%= link_to "Create New Review", "/reviews/new"%></p>
     <% end %>
   <% if !current_user %>
     <%= button_to 'Login', 'auth/google_oauth2', method: :get %>
@@ -61,6 +60,15 @@
       </div>
     </div>
   </div>
+
+<h2> List of Thrones </h2>
+<% @thrones.each do |throne| %>
+  <h4> Name of Location: <%= throne.name %> </h4>
+  <h4> Address: <%= throne.address %> </h4>
+  <h4> Directions: <%= throne.directions %> </h4>
+  <h4> <%= link_to "More Information", "/thrones/#{throne.id}" %> </h4>
+  <br>
+<% end %>
 
 
 
