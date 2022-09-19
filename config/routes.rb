@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/reviews/new', to: 'reviews#new'
   post '/reviews/new', to: 'reviews#create'
   # get '/thrones/new', to: 'thrones#new'
-  resources :thrones, only: [:new]
+  resources :thrones, only: [:new, :show]
   delete 'logout', to: 'users#destroy'
 
 

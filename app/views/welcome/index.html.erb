@@ -62,6 +62,15 @@
     </div>
   </div>
 
+<h2> List of Thrones </h2>
+<% @thrones.each do |throne| %>
+  <h4> Name of Location: <%= throne.name %> </h4>
+  <h4> Address: <%= throne.address %> </h4>
+  <h4> Directions: <%= throne.directions %> </h4>
+  <h4> <%= link_to "More Information", "/thrones/#{throne.id}" %> </h4>
+  <br>
+<% end %>
+
 
 
 
