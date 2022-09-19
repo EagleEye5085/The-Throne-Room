@@ -1,7 +1,9 @@
 <div class="navbar">
 <div class="center-horiz">
 <h1>Register a new Throne</h1>
-<%= form_with url: "https://the-throne-room-api.herokuapp.com/api/v1/throne_rooms", method: :post, local: true do |form| %>
+<%= form_with url: "/thrones", method: :post, local: true do |form| %>
+  <p><%= form.label :name, "Name of Location" %>
+  <%= form.text_field :name %></p>
   <p><%= form.label :location, "Location" %>
   <%= form.text_field :location %></p>
   <p><%= form.label :directions, "Directions" %>
@@ -9,22 +11,22 @@
   <br>
     <p><strong><%= form.label :baby_changing_station, "Baby changing station?" %></strong>  
   <div class="cards">
-    <p><%= form.radio_button :true, "Yes" %> Yes</p>
-    <p><%= form.radio_button :false, "No" %> No</p>
+    <p><%= form.radio_button :baby_changing_station, 1 %> Yes</p>
+    <p><%= form.radio_button :baby_changing_station, 0 %> No</p>
   </div><br>
-  <p><strong><%= form.label "Throne Style" %></strong>
+  <p><strong><%= form.label :bathroom_style, "Throne Style" %></strong>
   <div class="cards">
-    <p><%= form.radio_button :gender_neutral, 'Gender Neutral'%> Gender Neutral</p>
-    <p><%= form.radio_button :multi_stall_female, 'multi-stall(F)'%> Multi-Stall (F)</p>
-    <p><%= form.radio_button :multi_stall_male, 'multi-stall(M)'%> Multi-Stall (M)</p>
-    <p><%= form.radio_button :single_stall_female, 'single-stall(F)'%> Single-Stall (F)</p>
-    <p><%= form.radio_button :single_stall_male, 'single-stall(M)'%> Single-Stall (M)</p>
-    <p><%= form.radio_button :porta_potty, 'porta-potty'%> Porta-Potty</p>
+    <p><%= form.radio_button :bathroom_style, 'Gender Neutral'%> Gender Neutral</p>
+    <p><%= form.radio_button :bathroom_style, 'multi-stall F'%> Multi-Stall (F)</p>
+    <p><%= form.radio_button :bathroom_style, 'multi-stall M'%> Multi-Stall (M)</p>
+    <p><%= form.radio_button :bathroom_style, 'single-stall F'%> Single-Stall (F)</p>
+    <p><%= form.radio_button :bathroom_style, 'single-stall M'%> Single-Stall (M)</p>
+    <p><%= form.radio_button :bathroom_style, 'porta-potty'%> Porta-Potty</p>
   </div><br>
-  <p><strong><%= form.label "Key Code?" %></strong>
+  <p><strong><%= form.label :key_code_required, "Key Code?" %></strong>
   <div class="cards">
-    <p><%= form.radio_button :true, 'Yes'%> Yes</p>
-    <p><%= form.radio_button :false, 'No'%> No</p>
+    <p><%= form.radio_button :key_code_required, 1 %> Yes</p>
+    <p><%= form.radio_button :key_code_required, 0 %> No</p>
   </div><br>
   <p><%= form.submit "Register New Throne" %>
 <% end %>

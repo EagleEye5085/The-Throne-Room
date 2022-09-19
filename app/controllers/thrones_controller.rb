@@ -3,6 +3,12 @@ class ThronesController < ApplicationController
     
   end
 
+  def create
+    require 'pry'; binding.pry
+    #location: params[:location], direction: params[:direction]
+    redirect_to '/'
+  end
+
   def show
     thrones = ThroneFacade.create_thrones
     @throne = thrones.find do |throne|
