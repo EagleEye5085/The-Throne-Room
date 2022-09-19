@@ -4,11 +4,11 @@
 require 'rails_helper'
 
 RSpec.describe "New Throne room (registration)" do 
-  it "displays a link to 'Create a New Throne room' from landing page" do
+  it "displays a link to 'Create a New Throne room' from landing page only for logged in users" do
 
-    visit "/"
-
-    click_link("Create New Throne Room")
+    visit "/thrones/new"
+    # user = current_user #how can we test for this functionality
+    # click_link("Create New Throne Room")
 
     expect(current_path).to eq('/thrones/new')
     expect(page).to have_content("Location")
