@@ -5,4 +5,8 @@ class ThroneFacade
             Throne.new(throne)
         end
     end
+
+    def self.send(params)
+        throne = ThroneService.send_throne(params)
+    end
 end

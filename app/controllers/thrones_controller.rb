@@ -1,5 +1,5 @@
 require "uri"
-require "net/http"
+require "net/https"
 
 class ThronesController < ApplicationController 
   def new
@@ -7,9 +7,8 @@ class ThronesController < ApplicationController
   end
 
   def create 
-    not_params = {"throne_room" => {name: params[:name], location: params[:location], direction: params[:direction], baby_changing_station: params[:baby_changing_station], bathroom_style: params[:bathroom_style], key_code_required: params[:key_code_required]}}
-    send = Net::HTTP.post_form(URI.parse('https://the-throne-room-api.herokuapp.com/api/v1/throne_rooms'), not_params)
-    puts send.body
+    not_params = {"throne_room" => {name: params[:name], address: params[:address], directions: params[:directions], baby_changing_station: params[:baby_changing_station], bathroom_style: params[:bathroom_style], key_code_required: params[:key_code_required]}}
+    ThroneFacade.send(not_params)
     redirect_to '/'
   end
 
