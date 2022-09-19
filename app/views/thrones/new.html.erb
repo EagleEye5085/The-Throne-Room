@@ -2,11 +2,14 @@
 <div class="center-horiz">
 <h1>Register a new Throne</h1>
 <%= form_with url: "https://the-throne-room-api.herokuapp.com/api/v1/throne_rooms", method: :post, local: true do |form| %>
+<div class="cards">
   <p><%= form.label "Location" %>
   <%= form.text_field "Location" %></p>
   <p><%= form.label "Directions" %>
   <%= form.text_field "Directions" %></p>
-  <p><%= form.label "Baby changing station?" %>
+  </div><br>
+  <p><strong><%= form.label "Baby changing station?" %></strong>
+  <div class="cards">
   <div class="form-check">
     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
     <label class="form-check-label" for="flexRadioDefault1">
@@ -18,8 +21,10 @@
     <label class="form-check-label" for="flexRadioDefault2">
       No
     </label>
+  </div>
   </div><br>
-  <p><%= form.label "Throne Style" %>
+  <p><strong><%= form.label "Throne Style" %></strong>
+  <div class="cards">
   <div class="form-check">
     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
     <label class="form-check-label" for="flexRadioDefault1">
@@ -55,8 +60,10 @@
     <label class="form-check-label" for="flexRadioDefault6">
       porta-potty
     </label>
+    </div>
   </div><br>
-  <p><%= form.label "Key Code?" %>
+  <p><strong><%= form.label "Key Code?" %></strong>
+  <div class="cards">
   <div class="form-check">
     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
     <label class="form-check-label" for="flexRadioDefault1">
@@ -68,6 +75,7 @@
     <label class="form-check-label" for="flexRadioDefault2">
       No
     </label>
+    </div>
   </div><br>
   <p><%= form.submit "Register New Throne" %>
 <% end %>

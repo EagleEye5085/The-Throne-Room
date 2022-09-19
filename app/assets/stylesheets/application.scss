@@ -58,6 +58,20 @@ p {
 .center {
   margin: auto;
   width: 50%;
-  border: 3px solid green;
+  border: 3px solid whitesmoke;
   padding: 10px;
+}
+
+.cards {
+  color: black;
+  padding: 20px;
+  border: solid 1px #999;
+  box-shadow: 0 0 10px rgba(0, 12, 0, 0.6);
+  -moz-box-shadow: 0 0 10px rgba(0, 12, 0, 0.6);
+  -webkit-box-shadow: 0 0 10px rgba(0, 12, 0, 0.6);
+  -o-box-shadow: 0 0 10px rgba(0, 12, 0, 0.6);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
