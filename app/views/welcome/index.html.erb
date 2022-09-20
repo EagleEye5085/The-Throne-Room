@@ -43,16 +43,34 @@
     <div id="map"></div>
     <script>
       var map;
+      var marker;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 39.7392, lng: -104.9903},
           // 39.7392° N, 104.9903° W
           zoom: 8
         });
-      }
+        var features = [];
+        '<%@thrones.each do |throne| %>'
+            features.push(new google.maps.LatLng('<%=throne.lat%>', '<%=throne.long%>'))
+          '<% end %>'
+      var count = '<%=@thrones.count%>'
+      for (let i = 0; i < count; i++) {
+        marker = new google.maps.Marker({
+          position: features[i],
+          map: map,
+          icon: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+    });}
+        marker = new google.maps.Marker({
+          position: { lat: 39.7392, lng: -104.9903 },
+          map: map,
+          icon: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+    });
+      } window.initMap = initMap;
+  
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV["map_api_key"]%>&callback=initMap"
-    async defer></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV["map_api_key"]%>&callback=initMap">
+    </script>
   </body>
 </html>
 <div class="wrapper">
