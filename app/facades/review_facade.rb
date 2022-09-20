@@ -12,4 +12,8 @@ class ReviewFacade
       review = ReviewService.create_review(user_id)
       Review.new(review)
     end
+
+    def self.send(params)
+      review = ReviewService.send_review(params)
+    end
 end
