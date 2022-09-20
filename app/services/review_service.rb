@@ -14,4 +14,10 @@ class ReviewService
         response = conn.post("/api/v1/reviews")
         JSON.parse(response.body, symbolize_names: true)[:data]
     end
+
+    def self.send_review(params)
+        response = conn.post("/api/v1/reviews") do |thing|
+            thing.params = params
+        end
+    end
 end

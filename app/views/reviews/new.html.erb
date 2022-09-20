@@ -2,7 +2,7 @@
 <div class="center-horiz">
 <h1>Leave a Review</h1>
   <p>Choose a number from 0 to 5 for the below fields</p>
-  <%= form_with url: "", method: :post, local: true do |f| %>
+  <%= form_with url: "/thrones/#{@throne_room_id}/reviews", method: :post, local: true do |f| %>
     <%= f.label :cleanliness, "Cleanliness" %>
     <%= f.number_field :cleanliness, min: 0, max: 5  %><br>
   <br>
@@ -15,11 +15,13 @@
     <%= f.label :ambiance, "Ambiance" %>
     <%= f.number_field :ambiance, min: 0, max: 5  %><br>
   <br>
-    <%= f.label :accesibility, "Accesibility" %>
-    <%= f.number_field :accesibility, min: 0, max: 5 %><br>
+    <%= f.label :accessibility, "Accessibility" %>
+    <%= f.number_field :accessibility, min: 0, max: 5 %><br>
   <br>
   Comments<br>
     <%= f.text_area :other_comments, :cols => 30, :rows => 10 %><br>
+    
+    <%= f.hidden_field :user_id, :value => @user_id %>
 
     <%= f.submit 'Submit Review' %>
   <% end %>

@@ -13,6 +13,5 @@ class ThroneService
         response = conn.post("/api/v1/throne_rooms") do |thing|
             thing.params = params
         end
-    end
-    
+    end  
 end

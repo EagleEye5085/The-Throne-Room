@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get '/thrones/:id/reviews/new', to: 'reviews#new'
 
   post '/thrones', to: 'thrones#create'
+
+  post '/thrones/:id/reviews', to: 'reviews#create'
   
   resources :thrones, only: [:new, :show]
   delete 'logout', to: 'users#destroy'
