@@ -4,4 +4,7 @@
 <h3>Does it have a Babychanging station: <%= @throne.babystation %></h3>
 <h3>Bathroom Style: <%= @throne.bathroomstyle %></h3>
 <h3>Does it require a keycode: <%= @throne.keycode %></h3>
-<p><%= link_to "Create New Review", "/thrones/#{@throne.id}/reviews/new"%></p>
+
+<% if current_user %>
+    <p><%= link_to "Create New Review", "/thrones/#{@throne.id}/reviews/new"%></p>
+<% end %>
