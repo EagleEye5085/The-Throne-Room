@@ -14,6 +14,8 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 
+
+
 .center-horiz {
   /* display: block; */
   margin: auto;
@@ -58,7 +60,6 @@ p {
 .center {
   margin: auto;
   width: 50%;
-  border: 3px solid whitesmoke;
   padding: 10px;
 }
 
@@ -86,5 +87,20 @@ p {
 
 .wrapper {
   padding-right: 20px;
+}
+
+.bgd-image {
+  background-image: url("pexels-tim-mossholder-1722196.jpg");
+  /* The image used */
+  /* Used if the image is unavailable */
+  position: absolute;
+  /* You must set a specified height */
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  /* Do not repeat the image */
+  background-size: cover;
+  /* Resize the background image to cover the entire container */
 }
 

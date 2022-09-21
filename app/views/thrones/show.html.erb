@@ -1,10 +1,16 @@
-<h1><%=@throne.name.upcase%> Restroom</h1>
-<h3>Address: <%= @throne.address.upcase %></h3>
-<h3>Directions: <%= @throne.directions %></h3>
-<h3>Does it have a baby-changing station: <%= @throne.babystation %></h3>
-<h3>Bathroom Style: <%= @throne.bathroomstyle %></h3>
-<h3>Does it require a keycode: <%= @throne.keycode %></h3>
 
+<div class="bgd-image">
 <% if current_user %>
-    <p><%= link_to "Create New Review", "/thrones/#{@throne.id}/reviews/new"%></p>
+        <p><%= link_to "Create New Review", "/thrones/#{@throne.id}/reviews/new"%></p>
 <% end %>
+<div class="center-horiz">
+    <h1><%=@throne.name.upcase%> Restroom</h1>
+    </div>
+    <div class="center">
+    <h6>Address: <%= @throne.address.upcase %></h6>
+    <h6>Directions: <%= @throne.directions %></h6>
+    <h6>Baby-changing station: <%= @throne.babystation %></h6>
+    <h6>Bathroom Style: <%= @throne.bathroomstyle %></h6>
+    <h6>Keycode Required: <%= @throne.keycode %></h6>
+    </div>
+</div>
