@@ -2,7 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Review do 
   it 'reads data into variables' do 
-    data = {
+    data = {"id": "1",
+           "type": "throne_room",
+           "attributes":{
             "user_id": "1",
             "id": "1",
             "tp_quality": "2",
@@ -11,7 +13,7 @@ RSpec.describe Review do
             "ambiance": "2",
             "accessibility": "4",
             "other_comments": "What a great app!"
-            }
+            }}
       
     review = Review.new(data)
 
