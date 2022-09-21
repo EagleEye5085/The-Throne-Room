@@ -63,7 +63,7 @@
     });}
   
       } window.initMap = initMap;
-  
+
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV["map_api_key"]%>&callback=initMap">
     </script>
@@ -73,10 +73,12 @@
 <br>
 <h4>&#128701;<u> Existing Thrones</u> &#128701;</h4>
 <% @thrones.each do |throne| %>
-  <h6> Located at: <%= throne.name.upcase %> </h6>
-  <h6> Address: <%= throne.address.upcase %> </h6>
-  <h6> Directions: <%= throne.directions %> </h6>
-  <h6> <%= link_to "More Information", "/thrones/#{throne.id}" %> </h6>
+  <div id="throne<%=throne.id%>">
+    <h6> Located at: <%= throne.name.upcase %> </h6>
+    <h6> Address: <%= throne.address.upcase %> </h6>
+    <h6> Directions: <%= throne.directions %> </h6>
+    <h6> <%= link_to "More Information", "/thrones/#{throne.id}" %> </h6>
+  </div>
   <br>
 <% end %>
 </div>
@@ -87,9 +89,3 @@
       </div>
     </div>
   </div>
-
-
-
-
-
-
