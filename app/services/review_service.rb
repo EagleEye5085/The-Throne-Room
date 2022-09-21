@@ -10,7 +10,6 @@ class ReviewService
     end
     
     def self.create_review
-        ##will we need this method for posting a new review to the BE?
         response = conn.post("/api/v1/reviews")
         JSON.parse(response.body, symbolize_names: true)[:data]
     end
