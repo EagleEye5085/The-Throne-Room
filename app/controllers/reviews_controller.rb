@@ -15,5 +15,6 @@ class ReviewsController < ApplicationController
     end
 
     def show
+        @reviews = ReviewFacade.all_reviews(:id)
     end
 end
