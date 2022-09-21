@@ -14,8 +14,8 @@ RSpec.describe "New Throne room (registration)" do
     expect(page).to have_content("Location")
     expect(page).to have_content("Directions")
     expect(page).to have_content("Baby changing station?")
-    expect(page).to have_content("Throne style")
-    expect(page).to have_content("Key code?")
+    expect(page).to have_content("Throne Style")
+    expect(page).to have_content("Key Code?")
     expect(page).to have_button("Register New Throne")
   end
 
