@@ -4,12 +4,12 @@
 <%= form_with url: "/thrones", method: :post, local: true do |form| %>
   <p><%= form.label :name, "Name of Location" %>
   <%= form.text_field :name %></p>
-  <p><%= form.label :address, "Location" %>
+  <p><%= form.label :address, "Address" %>
   <%= form.text_field :address %></p>
   <p><%= form.label :directions, "Directions" %>
   <%= form.text_field :directions %></p>
   <br>
-    <p><strong><%= form.label :baby_changing_station, "Baby changing station?" %></strong>  
+    <p><strong><%= form.label :baby_changing_station, "Baby changing station?" %></strong>
   <div class="cards">
     <p><%= form.radio_button :baby_changing_station, 'true' %> Yes</p>
     <p><%= form.radio_button :baby_changing_station, 'false' %> No</p>
