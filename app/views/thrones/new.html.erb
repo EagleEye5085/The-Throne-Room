@@ -11,12 +11,12 @@
   <br>
     <p><strong><%= form.label :baby_changing_station, "Baby changing station?" %></strong>  
   <div class="cards">
-    <p><%= form.radio_button :baby_changing_station, 1 %> Yes</p>
-    <p><%= form.radio_button :baby_changing_station, 0 %> No</p>
+    <p><%= form.radio_button :baby_changing_station, 'true' %> Yes</p>
+    <p><%= form.radio_button :baby_changing_station, 'false' %> No</p>
   </div><br>
   <p><strong><%= form.label :bathroom_style, "Throne Style" %></strong>
   <div class="cards">
-    <p><%= form.radio_button :bathroom_style, 'Gender Neutral'%> Gender Neutral</p>
+    <p><%= form.radio_button :bathroom_style, 'gender-neutral'%> Gender Neutral</p>
     <p><%= form.radio_button :bathroom_style, 'multi-stall F'%> Multi-Stall (F)</p>
     <p><%= form.radio_button :bathroom_style, 'multi-stall M'%> Multi-Stall (M)</p>
     <p><%= form.radio_button :bathroom_style, 'single-stall F'%> Single-Stall (F)</p>
@@ -25,8 +25,8 @@
   </div><br>
   <p><strong><%= form.label :key_code_required, "Key Code?" %></strong>
   <div class="cards">
-    <p><%= form.radio_button :key_code_required, 1 %> Yes</p>
-    <p><%= form.radio_button :key_code_required, 0 %> No</p>
+    <p><%= form.radio_button :key_code_required, 'true' %> Yes</p>
+    <p><%= form.radio_button :key_code_required, 'false' %> No</p>
   </div><br>
   <p><%= form.submit "Register New Throne" %>
 <% end %>

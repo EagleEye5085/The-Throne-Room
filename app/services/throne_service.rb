@@ -2,6 +2,7 @@ class ThroneService
     
     def self.conn
         Faraday.new(url: "https://the-throne-room-api.herokuapp.com")
+        # Faraday.new(url: "http://localhost:3000")
     end
 
     def self.get_thrones
