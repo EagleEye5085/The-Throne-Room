@@ -3,8 +3,9 @@ Rails.application.routes.draw do
 
   #maybe redirect later to different controller action
   get '/auth/google_oauth2/callback', to: 'users#create'
-  
+
   get '/thrones/:id/reviews/new', to: 'reviews#new'
+
 
   post '/thrones', to: 'thrones#create'
 

@@ -17,5 +17,6 @@ class ThronesController < ApplicationController
     @throne = thrones.find do |throne|
       throne.id == params[:id]
     end 
+    @reviews = ReviewFacade.all_reviews(@throne.id)
   end
 end

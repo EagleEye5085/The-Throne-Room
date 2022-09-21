@@ -13,4 +13,7 @@ class ReviewsController < ApplicationController
         ReviewFacade.send(not_params)
         redirect_to "/thrones/#{params[:id]}"
     end
+
+    def show
+    end
 end
