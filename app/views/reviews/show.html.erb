@@ -1,14 +1,15 @@
-<div class="bgd-image">
-    <div class="center-horiz">
-        <h4> Reviews </h4>
-            <%@reviews[0..4].each do |review|%>
-                <p> Ambiance: <%= review.ambiance %> </p>
-                <p> Toliet Paper Quality: <%= review.tp_quality %> </p>
-                <p> Accessibility: <%= review.accessibility %> </p>
-                <p> Privacy: <%= review.privacy %> </p>
-                <p> Cleanliness: <%= review.cleanliness %> </p>
-                <p> Other Comments: <%= review.other_comments %> </p>
-                <br>
-            <%end%>
+<div class="center-horiz">
+    <h4> 5 Most Recent Reviews </h4>
+        <%@reviews[0..4].each_with_index do |review, index|%>
+            <div class="cards">
+            <h5> Review #<%= index + 1 %>:</h5>
+            <p> Ambiance: <%= review.ambiance %> </p>
+            <p> Toliet Paper Quality: <%= review.tp_quality %> </p>
+            <p> Accessibility: <%= review.accessibility %> </p>
+            <p> Privacy: <%= review.privacy %> </p>
+            <p> Cleanliness: <%= review.cleanliness %> </p>
+            <p> Other Comments: </p><p>"<%= review.other_comments %>"</p>
+            </div><br>
+        <%end%>
     </div>
 </div>
