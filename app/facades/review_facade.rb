@@ -1,7 +1,6 @@
 class ReviewFacade
     def self.all_reviews
       reviews = ReviewService.get_reviews
-      # require 'pry'; binding.pry 
         reviews.map do |review|
             Review.new(review)
         end
