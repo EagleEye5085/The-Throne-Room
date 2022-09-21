@@ -8,14 +8,14 @@ class Review
                     :accessibility,
                     :other_comments
     def initialize(data)
-        @user_id = data[:user_id]
+        @user_id = data[:attributes][:user_id]
         @id = data[:id]
-        @tp_quality = data[:tp_quality]
-        @cleanliness = data[:cleanliness]
-        @privacy = data[:privacy]
-        @ambiance = data[:ambiance]
-        @accessibility = data[:accessibility]
-        @other_comments = data[:other_comments]
+        @tp_quality = data[:attributes][:tp_quality]
+        @cleanliness = data[:attributes][:cleanliness]
+        @privacy = data[:attributes][:privacy]
+        @ambiance = data[:attributes][:ambiance]
+        @accessibility = data[:attributes][:accessibility]
+        @other_comments = data[:attributes][:other_comments]
     end
 end
 

@@ -6,7 +6,7 @@ class ThroneService
     end
 
     def self.get_thrones
-        response = conn.get("/api/v1/throne_rooms")
+        response = conn.get("api/v1/throne_rooms/closest_five")
         JSON.parse(response.body, symbolize_names: true)[:data]
     end
   
