@@ -1,6 +1,8 @@
 
 # <p align="center">  :crown: The Throne Room :crown: </p>
 
+![](https://img.shields.io/badge/Rails-5.2.8-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=2bbc8a) ![](https://img.shields.io/badge/Ruby-2.7.4-orange)
+
 The Throne Room is an interactive rails application that consumes several `API endpoints`, to let users search for public restrooms, `(referred to as "Thrones")` read and write reviews, and register new Thrones to the application database.
 
 Upon launching the application, users are taken to a landing page where they can see a Google Map with pins(:toilet:) indicating locations of the most recently created Thrones. 
