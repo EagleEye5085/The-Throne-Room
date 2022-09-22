@@ -1,12 +1,12 @@
-
 <div class="center-horiz">
   <h2>&#128081;</h2>
   <h1>The Throne Room	</h1>
   <h6>It's the next big movement</h6>
 </div>
 <div class="navbar">
+  <%= button_to "All Thrones", '/thrones', method: :get %>
   <% if current_user %>
-    <p><%= link_to "Create New Throne Room", "/thrones/new"%></p>
+    <p><%= button_to "Create New Throne Room", "/thrones/new", method: :get%></p>
     <% end %>
   <% if !current_user %>
     <%= button_to 'Login', 'auth/google_oauth2', method: :get %>
@@ -58,7 +58,7 @@
         '<%@thrones.each do |throne| %>'
             coordinates.push(new google.maps.LatLng('<%=throne.lat%>', '<%=throne.long%>'))
         '<% end %>'
-       
+
         var count = '<%=@thrones.count%>'
 
         for (let i = 0; i < count; i++) {
@@ -75,7 +75,7 @@
             marker.addListener('click', function() {
             information.open(map, marker);
             });
-        }  
+        }
 
         } window.initMap = initMap;
 
@@ -86,8 +86,8 @@
 </html>
 <div class="wrapper">
 <br>
-<h4>&#128701;<u> Existing Thrones</u> &#128701;</h4>
-<% @thrones.each do |throne| %>
+<h4>&#128701;<u> 5 Most Recently Added Thrones</u> &#128701;</h4>
+<% @thrones.reverse.each do |throne| %>
   <div id="throne<%=throne.id%>">
     <h6> Located at: <%= throne.name.upcase %> </h6>
     <h6> Address: <%= throne.address.upcase %> </h6>

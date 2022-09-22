@@ -1,0 +1,21 @@
+
+<div class="bgd-image">
+  <p><%= button_to "Home", '/', method: :get %></p>
+
+  <div class="center-horiz">
+
+    <h1>&#128701;<u> All Thrones </u> &#128701;</h1>
+      <% @thrones.each do |throne| %>
+        <div id="throne<%=throne.id%>">
+          <div class="cards2">
+            <h6> Located at: <%= throne.name.upcase %> </h6>
+            <h6> Address: <%= throne.address.upcase %> </h6>
+            <h6> Directions: <%= throne.directions %> </h6>
+            <h6> <%= button_to "More Information", "/thrones/#{throne.id}", method: :get %> </h6>
+          </div>
+        </div><br>
+      <% end %>
+
+  </div>
+
+</div>
