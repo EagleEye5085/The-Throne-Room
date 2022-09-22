@@ -70,7 +70,8 @@ group :test do
   gem 'orderly'
   gem 'pry'
   gem 'webmock'
-  
+  gem 'vcr'
+
   # Easy installation and use of chromedriver to run system tests with Chrome
 end
 

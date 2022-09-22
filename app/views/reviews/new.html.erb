@@ -1,4 +1,7 @@
 <div class="navbar">
+<p align="left" ><%= link_to "Home", '/' %></p>
+</div>
+<div class="navbar">
 <div class="center-horiz">
 <h1>Leave a Review</h1>
   <p>Choose a number from 0 to 5 for the below fields</p>
@@ -20,7 +23,7 @@
   <br>
   Comments<br>
     <%= f.text_area :other_comments, :cols => 30, :rows => 10 %><br>
-    
+
     <%= f.hidden_field :user_id, :value => @user_id %>
 
     <%= f.submit 'Submit Review' %>
