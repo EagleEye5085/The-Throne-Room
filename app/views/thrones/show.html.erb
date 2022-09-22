@@ -1,7 +1,7 @@
-
 <div class="bgd-image">
 <% if current_user %>
         <p><%= link_to "Create New Review", "/thrones/#{@throne.id}/reviews/new"%></p>
+        <p><%= link_to "Home", '/' %></p>
 <% end %>
 <div class="center-horiz">
     <h1><%=@throne.name.upcase%> Restroom</h1>

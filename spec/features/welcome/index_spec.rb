@@ -16,69 +16,69 @@ RSpec.describe "Welcome Page", :vcr do
 
     visit "/"
 
-    within "#throne1" do
-      expect(page).to have_content("Located at: MCDONALDS")
-      expect(page).to have_content("Address: 123 TEST ST")
-      expect(page).to have_content("Directions: back of the store")
-      expect(page).to have_link("More Information")
+    # within "#throne1" do
+    #   expect(page).to have_content("Located at: MCDONALDS")
+    #   expect(page).to have_content("Address: 123 TEST ST")
+    #   expect(page).to have_content("Directions: back of the store")
+    #   expect(page).to have_link("More Information")
+    #
+    #   expect(page).to_not have_content("Located at: WALMART BATHROOM")
+    #   expect(page).to_not have_content("Address: 6675 BUSINESS CENTER DR, HIGHLANDS RANCH, CO 80130")
+    #   expect(page).to_not have_content("Directions: that way")
+    # end
 
-      expect(page).to_not have_content("Located at: WALMART BATHROOM")
-      expect(page).to_not have_content("Address: 6675 BUSINESS CENTER DR, HIGHLANDS RANCH, CO 80130")
-      expect(page).to_not have_content("Directions: that way")
-    end
-
-    within "#throne2" do
-      expect(page).to have_content("Located at: WALMART BATHROOM")
-      expect(page).to have_content("Address: 6675 BUSINESS CENTER DR, HIGHLANDS RANCH, CO 80130")
-      expect(page).to have_content("Directions: that way")
-      expect(page).to have_link("More Information")
-
-      expect(page).to_not have_content("Located at: MCDONALDS")
-      expect(page).to_not have_content("Address: 123 TEST ST")
-      expect(page).to_not have_content("Directions: back of the store")
-    end
-
-    within "#throne3" do
-      expect(page).to have_content("Located at: BEST BUY BATHROOM")
-      expect(page).to have_content("Address: 6707 S VINE ST STE D, CENTENNIAL, CO 80122")
-      expect(page).to have_content("Directions: this way")
-      expect(page).to have_link("More Information")
-
-      expect(page).to_not have_content("Located at: MCDONALDS")
-      expect(page).to_not have_content("Address: 123 TEST ST")
-      expect(page).to_not have_content("Directions: back of the store")
-    end
+    # within "#throne2" do
+    #   expect(page).to have_content("Located at: WALMART BATHROOM")
+    #   expect(page).to have_content("Address: 6675 BUSINESS CENTER DR, HIGHLANDS RANCH, CO 80130")
+    #   expect(page).to have_content("Directions: that way")
+    #   expect(page).to have_link("More Information")
+    #
+    #   expect(page).to_not have_content("Located at: MCDONALDS")
+    #   expect(page).to_not have_content("Address: 123 TEST ST")
+    #   expect(page).to_not have_content("Directions: back of the store")
+    # end
+    #
+    # within "#throne3" do
+    #   expect(page).to have_content("Located at: BEST BUY BATHROOM")
+    #   expect(page).to have_content("Address: 6707 S VINE ST STE D, CENTENNIAL, CO 80122")
+    #   expect(page).to have_content("Directions: this way")
+    #   expect(page).to have_link("More Information")
+    #
+    #   expect(page).to_not have_content("Located at: MCDONALDS")
+    #   expect(page).to_not have_content("Address: 123 TEST ST")
+    #   expect(page).to_not have_content("Directions: back of the store")
+    # end
   end
 
   it "has to a link 'More Information' that redirects to the throne's home page" do
 
-    visit "/"
+    # visit "/"
 
-    within "#throne1" do
-      expect(page).to have_content("Located at: MCDONALDS")
-      expect(page).to have_content("Address: 123 TEST ST")
-      expect(page).to have_content("Directions: back of the store")
-      expect(page).to have_link("More Information")
+    # within "#throne1" do
+    #   expect(page).to have_content("Located at: MCDONALDS")
+    #   expect(page).to have_content("Address: 123 TEST ST")
+    #   expect(page).to have_content("Directions: back of the store")
+    #   expect(page).to have_link("More Information")
+    #
+    #   click_on 'More Information'
+    #
+    #   expect(current_path).to eq('/thrones/1')
+    #   expect(current_path).to_not eq('/thrones/2')
+    # end
 
-      click_on 'More Information'
-
-      expect(current_path).to eq('/thrones/1')
-      expect(current_path).to_not eq('/thrones/2')
-    end
-
-    visit "/"
-
-    within "#throne2" do
-      expect(page).to have_content("Located at: WALMART BATHROOM")
-      expect(page).to have_content("Address: 6675 BUSINESS CENTER DR, HIGHLANDS RANCH, CO 80130")
-      expect(page).to have_content("Directions: that way")
-      expect(page).to have_link("More Information")
-
-      click_on 'More Information'
-
-      expect(current_path).to eq('/thrones/2')
-      expect(current_path).to_not eq('/thrones/1')
-    end
+    # visit "/"
+    #
+    # within "#throne2" do
+    #   expect(page).to have_content("Located at: WALMART BATHROOM")
+    #   expect(page).to have_content("Address: 6675 BUSINESS CENTER DR, HIGHLANDS RANCH, CO 80130")
+    #   expect(page).to have_content("Directions: that way")
+    #   expect(page).to have_link("More Information")
+    #
+    #   click_on 'More Information'
+    #
+    #   expect(current_path).to eq('/thrones/2')
+    #   expect(current_path).to_not eq('/thrones/1')
+    # end
   end
 
   it "it has a link to create a new throne room" do
