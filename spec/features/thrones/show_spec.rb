@@ -30,7 +30,7 @@ RSpec.describe "Thrones Show Page" do
     expect(page).to_not have_content("longitude: -1.1")
   end
 
-  it "does NOT display a link to create a new throne room review if the user is NOT logged in" do 
+  it "does NOT display a button to create a new throne room review if the user is NOT logged in" do 
 
     data = {
             "id": "1",
@@ -48,8 +48,12 @@ RSpec.describe "Thrones Show Page" do
     @throne = Throne.new(data)
 
     visit "/thrones/#{@throne.id}"
+
+    fill_in "Name of Location", with: "Gaylord of the Rockies Resort"
+    fill_in "Address", with: "6700 N Gaylord Rockies Blvd, Aurora, CO 80019"
+    fill_in "Directions", with: "Literaly bathrooms everywhere."
     
-    expect(page).to_not have_link("Create New Review")
+    expect(page).to_not have_button("Create New Review")
 
   end
 end
