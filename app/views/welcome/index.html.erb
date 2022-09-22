@@ -43,26 +43,41 @@
     <div id="map"></div>
     <script>
       var map;
+
       var marker;
+
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 39.7392, lng: -104.9903},
           // 39.7392° N, 104.9903° W
           zoom: 8
         });
-        var features = [];
+
+        var coordinates = [];
+
         '<%@thrones.each do |throne| %>'
-            features.push(new google.maps.LatLng('<%=throne.lat%>', '<%=throne.long%>'))
-          '<% end %>'
-      var count = '<%=@thrones.count%>'
-      for (let i = 0; i < count; i++) {
-        marker = new google.maps.Marker({
-          position: features[i],
-          map: map,
-          icon: "https://user-images.githubusercontent.com/102835975/191607644-2d8ce642-e06b-4531-9924-df10d46c2bd4.png",
-    });}
-  
-      } window.initMap = initMap;
+            coordinates.push(new google.maps.LatLng('<%=throne.lat%>', '<%=throne.long%>'))
+        '<% end %>'
+       
+        var count = '<%=@thrones.count%>'
+
+        for (let i = 0; i < count; i++) {
+            var information = new google.maps.InfoWindow({
+            content: '<h4> <%= link_to "About Us", "https://youtu.be/dQw4w9WgXcQ" %> </h4>'
+            });
+
+            marker = new google.maps.Marker({
+            position: coordinates[i],
+            map: map,
+            icon: "https://user-images.githubusercontent.com/102835975/191607644-2d8ce642-e06b-4531-9924-df10d46c2bd4.png",
+            });
+
+            marker.addListener('click', function() {
+            information.open(map, marker);
+            });
+        }  
+
+        } window.initMap = initMap;
 
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV["map_api_key"]%>&callback=initMap">
