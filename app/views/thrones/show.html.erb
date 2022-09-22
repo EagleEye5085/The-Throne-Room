@@ -1,8 +1,8 @@
 <div class="bgd-image">
 <% if current_user %>
-        <p><%= link_to "Create New Review", "/thrones/#{@throne.id}/reviews/new"%></p>
-        <p><%= link_to "Home", '/' %></p>
+        <p><%= button_to "Create New Review", "/thrones/#{@throne.id}/reviews/new", method: :get%></p>
 <% end %>
+<p><%= button_to "Home", '/', method: :get %></p>
 <div class="center-horiz">
     <h1><%=@throne.name.upcase%> Restroom</h1>
     </div>
