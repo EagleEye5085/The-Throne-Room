@@ -4,7 +4,7 @@
 The Throne Room is an interactive rails application that consumes several `API endpoints`, to let users search for public restrooms, `(referred to as "Thrones")` read and write reviews, and register new Thrones to the application database.
 
 Upon launching the application, users are taken to a landing page where they can see a Google Map with pins(:toilet:) indicating locations of the most recently created Thrones. 
-[![Screen-Shot-2022-09-22-at-11-37-15-AM.png](https://i.postimg.cc/rpLfv3hr/Screen-Shot-2022-09-22-at-11-37-15-AM.png)](https://postimg.cc/nX0KmRfF)
+[![Screen-Shot-2022-09-22-at-2-53-45-PM.png](https://i.postimg.cc/MpgHBf5x/Screen-Shot-2022-09-22-at-2-53-45-PM.png)](https://postimg.cc/5Xqfd0Dk)
 > The Service Oriented Architecture of this application allowed the dev team to split into a Front End and Back End service. The Front End's focus was on rendering view logic based on data stored in the Back End database, and consuming different API endpoints.
 
 Users can also see these Thrones as a list on the landing page, with each Throne's pertinent information: `Location, Address, Directions`. There is a link to view `More Information` for each Throne, which takes the user to that Throne's show page. 
