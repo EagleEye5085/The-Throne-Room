@@ -101,7 +101,7 @@ RSpec.describe "Welcome Page", :vcr do
     expect(page).to have_content("Create New Throne Room")
   end
 
-  it "it has a link to logout" do
+  it "it has a button to logout" do
     OmniAuth.config.test_mode = true
     OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
                                                                       :provider => 'google',
