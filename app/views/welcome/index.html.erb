@@ -86,16 +86,20 @@
 </html>
 <div class="wrapper">
 <br>
+<div class="center-horiz">
 <h4>&#128701;<u> 5 Most Recently Added Thrones</u> &#128701;</h4>
 <% @thrones.reverse.each do |throne| %>
   <div id="throne<%=throne.id%>">
+  <div class="cards">
     <h6> Located at: <%= throne.name.upcase %> </h6>
     <h6> Address: <%= throne.address.upcase %> </h6>
     <h6> Directions: <%= throne.directions %> </h6>
     <h6> <%= link_to "More Information", "/thrones/#{throne.id}" %> </h6>
   </div>
+  </div>
   <br>
 <% end %>
+</div>
 </div>
   <div class="row justify-content-md-center">
     <div class="pad-25-top pad-25-bottom">
